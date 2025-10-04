@@ -1,0 +1,22 @@
+// simple UI behaviors
+document.addEventListener('DOMContentLoaded', function(){
+  // set year
+  const y = new Date().getFullYear();
+  const yr = document.getElementById('year');
+  if(yr) yr.textContent = y;
+
+  // mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.querySelector('.nav-links');
+  toggle?.addEventListener('click', () => {
+    if(!navLinks) return;
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.background = 'rgba(10,14,20,0.6)';
+    navLinks.style.padding = '0.8rem';
+    navLinks.style.position = 'absolute';
+    navLinks.style.right = '1rem';
+    navLinks.style.top = '60px';
+    navLinks.style.borderRadius = '10px';
+  });
+});
